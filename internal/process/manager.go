@@ -91,6 +91,9 @@ func ExecDir(timeout time.Duration, dir, desc, cmdName string, args ...string) (
 		return "", err.Error(), err
 	}
 
+	//DELETE ME
+	fmt.Printf("ExecDir: run %v %v on %v\n", cmdName, args, dir)
+	
 	pid := Add(desc, cmd)
 	done := make(chan error)
 	go func() {
